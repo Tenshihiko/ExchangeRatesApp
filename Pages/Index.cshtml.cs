@@ -37,7 +37,7 @@ namespace ExchangeRatesApp.Pages
 
             foreach (var bank in Banks)
             {
-                bank.Rate = BankSiteDao.GetRate(bank.Url, bank.Selector, bank.By, bank.Timeout, bank.Reverse);
+                bank.Rate = BankSiteDao.GetRate(bank.Url, bank.Selector, bank.By ?? SelectBy.Css, bank.Timeout ?? 1000, bank.Reverse);
             }
 
         }

@@ -5,6 +5,10 @@
 }
 
 <div class="text-center">
+    <nav>
+        <a href="/Index">Home</a>
+        <a href="/Banks/Index">Banks</a>
+    </nav>
     <h1 class="display-4">Welcome</h1>
     <table class="table"> 
 
@@ -16,7 +20,7 @@
         {
             <tr>
                 <td>@bank.Name</td>
-                <td>@bank.Rate.ToString("0.0000")</td>
+                <td>@bank.Rate?.ToString("0.0000")</td>
             </tr>
         }
 

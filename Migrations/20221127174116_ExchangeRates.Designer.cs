@@ -4,6 +4,7 @@ using ExchangeRatesApp.Dao;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExchangeRatesApp.Migrations
 {
     [DbContext(typeof(ExchangeRateContext))]
-    partial class ExchangeRateContextModelSnapshot : ModelSnapshot
+    [Migration("20221127174116_ExchangeRates")]
+    partial class ExchangeRates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

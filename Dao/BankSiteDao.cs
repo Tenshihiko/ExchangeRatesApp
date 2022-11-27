@@ -31,7 +31,7 @@ namespace ExchangeRatesApp.Dao
                     }
                     catch (Exception)
                     {
-                        Thread.Sleep(1000);
+                        Thread.Sleep(timeout);
                     }
                 } while (string.IsNullOrEmpty(valueStr));
 

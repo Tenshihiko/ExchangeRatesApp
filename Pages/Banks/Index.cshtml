@@ -1,0 +1,66 @@
+﻿@page
+@model ExchangeRatesApp.Pages.Banks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank[0].Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank[0].Selector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank[0].Reverse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank[0].Timeout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank[0].By)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank[0].Rate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Bank) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Selector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reverse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timeout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.By)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Name">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Name">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Name">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
